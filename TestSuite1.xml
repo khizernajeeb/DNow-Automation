@@ -1,0 +1,24 @@
+<!--Alvina Kamran  Test cases-->
+
+<suite name="DNow Suite - 1">
+
+    <test name="LoginFSP/ReturnFlight/GTServices">
+        <classes>
+
+            <!--Fsp user-->
+            <class name="Testcases.loginTests">
+                <methods>
+                    <include name="loginIntoVistaJetApplication"></include>
+                </methods>
+            </class>
+
+            <class name="Testcases.dashboardTests">
+                <methods>
+                    <include name="dashboardPageOpen"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>
