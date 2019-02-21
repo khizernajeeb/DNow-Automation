@@ -1,4 +1,4 @@
-# DNow Web Automation Framework
+# Web Automation Framework
 
 Insructions:
 
