@@ -10,5 +10,10 @@ public class configProperties {
     public static String Device = appConfig.getDevice();
     public static String Browser = appConfig.getBrowser();
     public static String IsEnableReporting = appConfig.getIsEnableReporting();
+    public static String dbUrl = appConfig.getDbUrl();
+    public static String dbUsername = appConfig.getDbUsername();
+    public static String dbPassword = appConfig.getDbPassword();
+    public static String grantType = appConfig.getGrantType();
+    public static String clientId = appConfig.getClientId();
 
 }

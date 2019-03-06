@@ -1,8 +1,7 @@
 package General;
 
-import Objects.loginPage;
-import Objects.*;
-import java.io.File;
+import PageObject.loginPage;
+import PageObject.*;
 
 import com.relevantcodes.extentreports.ExtentReports;
 

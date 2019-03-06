@@ -1,32 +1,32 @@
+/*
+#Database connectivity class
+ */
+
 package dbConnection;
 
 import java.sql.*;
 
-import static Config.configProperties.Password;
-import static Config.configProperties.Url;
-import static Config.configProperties.UserName;
+import static Config.configProperties.*;
 
 public class dbConn {
     //DB Credentials
-    static String url = Url;
-    static String username = UserName;
-    static String password = Password;
+    static String url = dbUrl;
+    static String username = dbUsername;
+    static String password = dbPassword;
 
     static Connection connection = null;
     static Statement statement = null;
 
     public static void connectDb(String url, String username, String password) throws ClassNotFoundException, SQLException {
 
-        Class.forName("oracle.jdbc.driver.OracleDriver"); // load sql driver
+        Class.forName("com.mysql.jdbc.Driver");
         connection = DriverManager.getConnection(url, username, password); //DB connection
     }
 
-    public static String getVerificationCode() throws SQLException {
+    public static String getActiveSurveyId() throws SQLException {
 
-        String Verif_Code = "";
-        String query =
-                "select * from VJ_EXTERNAL_APP_CONFIG " +
-                        "where key = 'DUMMY_VERIFICATION_CODE' ";
+        String activeSurveyID = "";
+        String query = "SELECT * FROM droobi.surveys where status = 1";
 
         try {
 
@@ -35,8 +35,7 @@ public class dbConn {
             ResultSet resultSet = statement.executeQuery(query);
 
             while (resultSet.next()) {
-                Verif_Code = resultSet.getString("VALUE");
-                //System.out.println(Verif_Code);
+                activeSurveyID = resultSet.getString("id");
             }
 
             resultSet.close();
@@ -53,7 +52,7 @@ public class dbConn {
             connection.close();
         }
 
-        return Verif_Code;
+        return activeSurveyID;
     }
 
 }

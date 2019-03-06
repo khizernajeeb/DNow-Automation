@@ -3,12 +3,14 @@ package Testcases;
 import General.MainCall;
 import General.WebDriverFactory;
 import General.baseTest;
-import Objects.loginPage;
-import org.openqa.selenium.By;
+import dbConnection.dbConn;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Config.configProperties;
-import static Objects.loginPage.by_logout;
+
+import java.sql.SQLException;
+
+import static PageObject.loginPage.by_logout;
 
 public class loginTests extends baseTest {
 
@@ -21,5 +23,11 @@ public class loginTests extends baseTest {
         } catch (Exception e) {
             System.out.println("Login failed");
         }
+    }
+
+    @Test
+    public static void DatabaseConnect() throws SQLException {
+        String surveyID = dbConn.getActiveSurveyId();
+        System.out.println(surveyID);
     }
 }

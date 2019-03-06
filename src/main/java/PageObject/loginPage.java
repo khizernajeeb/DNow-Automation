@@ -1,12 +1,10 @@
-package Objects;
+package PageObject;
 
-        import General.MainCall;
         import General.WebDriverFactory;
         import org.openqa.selenium.By;
         import org.openqa.selenium.WebElement;
         import org.openqa.selenium.support.ui.ExpectedConditions;
         import org.openqa.selenium.support.ui.WebDriverWait;
-        import org.testng.Assert;
 
 /**
  * Created by VD on 5/28/2018.

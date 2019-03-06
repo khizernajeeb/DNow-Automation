@@ -1,20 +1,18 @@
 package Testcases;
 
-import Config.configProperties;
-import General.MainCall;
 import General.WebDriverFactory;
 import General.baseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static Objects.dashboardPage.byDashboardText;
+import static PageObject.dashboardPage.byDashboardText;
 
 public class dashboardTests extends baseTest {
 
     @Test()
     public static void dashboardPageOpen() throws InterruptedException {
         try {
-            Assert.assertEquals(WebDriverFactory.getDriver().findElement(byDashboardText).isDisplayed(), "MyDashboard");
+            Assert.assertEquals(WebDriverFactory.getDriver().findElement(byDashboardText).isDisplayed(), "Test test failed for reporting purpose");
 
         } catch (Exception e) {
             System.out.println("Login failed");
