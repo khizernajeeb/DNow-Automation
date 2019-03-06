@@ -1,8 +1,20 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="DNow Suite">
-    <suite-files>
-        <suite-file path="TestSuite1.xml" />
-    </suite-files>
+<suite name="Web Automation Suite">
+    <test name="Web Automation">
+        <classes>
+            <class name="Testcases.loginTests">
+                <methods>
+                    <include name="loginIntoVistaJetApplication"></include>
+                </methods>
+            </class>
+
+            <class name="Testcases.dashboardTests">
+                <methods>
+                    <include name="dashboardPageOpen"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
